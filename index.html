@@ -1,24 +1,23 @@
-
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixelcheat Krunker - Dein Vorteil im Spiel</title>
-    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> Optional: Füge ein Favicon hinzu (als externe Datei) -->
+    <title>Pixelcheat Krunker - Your In-Game Advantage</title>
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> Optional: Add a favicon (external file) -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary-color: #007bff; /* Hauptblau */
+            --primary-color: #007bff; /* Main blue */
             --primary-dark: #0056b3;
-            --secondary-color: #00d9ff; /* Helleres Akzentblau */
-            --background-dark: #001f3f; /* Sehr dunkles Blau für Header/Footer */
-            --background-medium: #003366; /* Mittleres Dunkelblau für Sections */
-            --text-light: #f0f8ff; /* Sehr helles Blau/Weiß */
+            --secondary-color: #00d9ff; /* Lighter accent blue */
+            --background-dark: #001f3f; /* Very dark blue for header/footer */
+            --background-medium: #003366; /* Medium dark blue for sections */
+            --text-light: #f0f8ff; /* Very light blue/white */
             --text-dark: #0a192f;
-            --card-bg: rgba(0, 51, 102, 0.7); /* Leicht transparentes Blau für Karten */
-            --border-color: rgba(0, 123, 255, 0.3);
+            --card-bg: rgba(0, 51, 102, 0.75); /* Slightly more opaque blue for cards */
+            --border-color: rgba(0, 123, 255, 0.4); /* More visible border */
             --highlight-glow: 0 0 15px rgba(0, 123, 255, 0.7);
         }
 
@@ -36,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* --- Schneefall --- */
+        /* --- Snowfall --- */
         .snowfall-container {
             position: fixed;
             top: 0;
@@ -50,13 +49,14 @@
 
         .snowflake {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.9); /* Whiter and more opaque snowflakes */
             border-radius: 50%;
             pointer-events: none;
             animation-name: snowfall-individual;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
             will-change: transform;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Slight glow for snowflakes */
         }
 
         @keyframes snowfall-individual {
@@ -65,7 +65,7 @@
                 opacity: 0;
             }
             10% {
-                opacity: 1;
+                opacity: 0.9; /* More visible */
             }
             100% {
                 transform: translateY(110vh) translateX(var(--drift-x)) rotate(var(--drift-rotate));
@@ -73,7 +73,7 @@
             }
         }
 
-        /* --- Globale Stile --- */
+        /* --- Global Styles --- */
         .container {
             width: 90%;
             max-width: 1100px;
@@ -155,7 +155,7 @@
             animation-fill-mode: backwards;
         }
 
-        /* --- Sektionen --- */
+        /* --- Sections --- */
         main section {
             padding: 4rem 0;
             position: relative;
@@ -170,10 +170,7 @@
 
         #hero {
             text-align: center;
-            /* Erwäge eine einfache Verlaufsfarbe, wenn kein Bild verwendet wird */
             background: linear-gradient(rgba(0, 31, 63, 0.85), rgba(0, 31, 63, 0.95));
-            /* Optional: Hintergrundbild, wenn du es einbinden kannst (z.B. base64) oder extern hostest */
-            /* background: linear-gradient(rgba(0, 31, 63, 0.85), rgba(0, 31, 63, 0.95)), url('krunker-bg.jpg') no-repeat center center/cover; */
             color: #fff;
             padding: 6rem 0;
         }
@@ -218,7 +215,27 @@
             color: #fff;
         }
 
-        /* --- Features Sektion --- */
+        /* --- Showcase Image --- */
+        #showcase {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .showcase-image-container {
+            max-width: 700px; /* Adjust as needed */
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), var(--highlight-glow);
+            border: 3px solid var(--primary-color);
+        }
+        .showcase-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* --- Features Section --- */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,27 +257,19 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.3), var(--highlight-glow);
         }
 
-        .feature-icon-placeholder { /* Platzhalter, falls keine SVGs verwendet werden */
+        .feature-icon-placeholder {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--secondary-color);
             filter: drop-shadow(0 0 5px var(--secondary-color));
         }
-        /*
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 0 5px var(--secondary-color));
-        }
-        */
 
         .feature-item h3 {
             font-size: 1.5rem;
             color: var(--secondary-color);
         }
 
-        /* --- Installations Sektion --- */
+        /* --- Installation Section --- */
         .installation-steps {
             display: flex;
             flex-direction: column;
@@ -324,7 +333,7 @@
             color: var(--text-dark);
         }
 
-        /* --- Download Sektion --- */
+        /* --- Download Section --- */
         #download {
             text-align: center;
             background: var(--background-dark);
@@ -360,7 +369,7 @@
             color: #fff;
         }
 
-        /* --- Animationen --- */
+        /* --- Animations --- */
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -375,7 +384,7 @@
           100% { opacity: 1; }
         }
 
-        /* Responsive Anpassungen */
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
             h2 { font-size: 2rem; }
             #hero h2 { font-size: 2.2rem; }
@@ -388,64 +397,67 @@
 </head>
 <body>
     <div class="snowfall-container">
-        <!-- Schneeflocken werden hier per JS hinzugefügt -->
+        <!-- Snowflakes will be added here by JS -->
     </div>
 
     <header>
         <div class="container">
             <h1 class="logo-text">Pixelcheat<span class="highlight">Krunker</span></h1>
-            <p class="tagline">Entfessle dein volles Potenzial!</p>
+            <p class="tagline">Unleash Your Full Potential!</p>
         </div>
     </header>
 
     <main>
         <section id="hero">
             <div class="container">
-                <h2>Der ultimative Krunker.io Vorteil</h2>
-                <p>Dominiere das Spiel mit präzisem Aimbot, klarem ESP und mehr. Kostenlos und einfach zu installieren.</p>
-                <a href="#download" class="cta-button">Cheat Herunterladen</a>
+                <h2>The Ultimate Krunker.io Advantage</h2>
+                <p>Dominate the game with precise Aimbot, clear ESP, and more. Free and easy to install.</p>
+                <a href="#download" class="cta-button">Download Cheat</a>
+            </div>
+        </section>
+
+        <section id="showcase">
+            <div class="container">
+                <h2>See it in Action!</h2>
+                <div class="showcase-image-container">
+                    <img src="https://i.imgur.com/NObj1ts.png" alt="Pixelcheat Krunker Mod Menu Showcase">
+                </div>
             </div>
         </section>
 
         <section id="features">
             <div class="container">
-                <h2>Features im Überblick</h2>
+                <h2>Features Overview</h2>
                 <div class="feature-grid">
                     <div class="feature-item">
-                        <!-- <img src="icons/aimbot.svg" alt="Aimbot Icon" class="feature-icon"> -->
                         <div class="feature-icon-placeholder">🎯</div>
-                        <h3>Präziser Aimbot</h3>
-                        <p>Automatisches Zielen auf Gegner für maximale Treffsicherheit. Konfigurierbar für Zielen bei Rechtsklick.</p>
+                        <h3>Precise Aimbot</h3>
+                        <p>Automatically aim at enemies for maximum accuracy. Configurable for aim-on-right-mouse-button.</p>
                     </div>
                     <div class="feature-item">
-                        <!-- <img src="icons/esp.svg" alt="ESP Icon" class="feature-icon"> -->
                         <div class="feature-icon-placeholder">👁️</div>
                         <h3>ESP (Wallhack)</h3>
-                        <p>Sieh Gegner durch Wände, inklusive Namen, Lebensbalken (falls implementiert) und Linien zu ihnen.</p>
+                        <p>See enemies through walls, including names, health bars (if implemented), and lines to them.</p>
                     </div>
                     <div class="feature-item">
-                        <!-- <img src="icons/wireframe.svg" alt="Wireframe Icon" class="feature-icon"> -->
                         <div class="feature-icon-placeholder">🌐</div>
-                        <h3>Wireframe Modus</h3>
-                        <p>Zeigt die Umrisse der Spielwelt an, um die Struktur besser zu erkennen.</p>
+                        <h3>Wireframe Mode</h3>
+                        <p>Displays the outlines of the game world to better understand its structure.</p>
                     </div>
                     <div class="feature-item">
-                        <!-- <img src="icons/norecoil.svg" alt="No Recoil Icon" class="feature-icon"> -->
                         <div class="feature-icon-placeholder">🔫</div>
                         <h3>Recoil Management</h3>
-                        <p>Der Aimbot hilft, den Waffenrückstoß zu kontrollieren, für stabilere Schüsse.</p>
+                        <p>The Aimbot helps control weapon recoil for more stable shots.</p>
                     </div>
                     <div class="feature-item">
-                        <!-- <img src="icons/menu.svg" alt="Menu Icon" class="feature-icon"> -->
                         <div class="feature-icon-placeholder">⚙️</div>
-                        <h3>Intuitives Menü</h3>
-                        <p>Einfach zu bedienendes In-Game Menü (Taste: Einfg) zum Aktivieren/Deaktivieren der Funktionen.</p>
+                        <h3>Intuitive Menu</h3>
+                        <p>Easy-to-use in-game menu (Key: Insert) to toggle features on/off.</p>
                     </div>
                     <div class="feature-item">
-                        <!-- <img src="icons/free.svg" alt="Free Icon" class="feature-icon"> -->
                         <div class="feature-icon-placeholder">💯</div>
-                        <h3>100% Kostenlos</h3>
-                        <p>Alle Funktionen sind vollständig kostenlos verfügbar.</p>
+                        <h3>100% Free</h3>
+                        <p>All features are available completely free of charge.</p>
                     </div>
                 </div>
             </div>
@@ -453,28 +465,28 @@
 
         <section id="installation">
             <div class="container">
-                <h2>Installationsanleitung</h2>
+                <h2>Installation Guide</h2>
                 <div class="installation-steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Browser-Erweiterung installieren</h3>
-                            <p>Du benötigst eine Browser-Erweiterung wie <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer">Tampermonkey</a> (empfohlen) oder Greasemonkey (für Firefox).</p>
-                            <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer" class="button-secondary">Tampermonkey Holen</a>
+                            <h3>Install Browser Extension</h3>
+                            <p>You need a browser extension like <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer">Tampermonkey</a> (recommended) or Greasemonkey (for Firefox).</p>
+                            <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer" class="button-secondary">Get Tampermonkey</a>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Cheat-Skript installieren</h3>
-                            <p>Klicke auf den "Download Cheat"-Button unten. Tampermonkey sollte sich öffnen und dich fragen, ob du das Skript installieren möchtest. Bestätige die Installation.</p>
+                            <h3>Install Cheat Script</h3>
+                            <p>Click the "Download Cheat" button below. Tampermonkey should open and ask if you want to install the script. Confirm the installation.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Krunker.io besuchen & Spielen!</h3>
-                            <p>Öffne <a href="https://krunker.io/" target="_blank" rel="noopener noreferrer">Krunker.io</a>. Der Cheat sollte automatisch aktiv sein. Öffne das Menü im Spiel mit der <strong>Einfg</strong>-Taste, um Funktionen anzupassen.</p>
+                            <h3>Visit Krunker.io & Play!</h3>
+                            <p>Open <a href="https://krunker.io/" target="_blank" rel="noopener noreferrer">Krunker.io</a>. The cheat should be active automatically. Open the in-game menu with the <strong>Insert</strong> key to customize features.</p>
                         </div>
                     </div>
                 </div>
@@ -483,32 +495,31 @@
 
         <section id="download">
             <div class="container">
-                <h2>Bereit für den Sieg?</h2>
-                <p>Klicke hier, um das Pixelcheat Krunker Skript herunterzuladen und zu installieren.</p>
-                <!-- WICHTIG: Passe den Link an dein GitHub Repo und den Dateinamen an! -->
-                <!-- Beispiel: https://DEIN_BENUTZERNAME.github.io/DEIN_REPO_NAME/krunkercheat2025.user.js -->
-                <a href="https://partypixelparty7.github.io/DEIN_REPO_NAME/krunkercheat2025.user.js" id="download-cheat-button" class="cta-button large">
-                    <!-- Inline SVG für Download Icon -->
+                <h2>Ready for Victory?</h2>
+                <p>Click here to download and install the Pixelcheat Krunker script.</p>
+                <!-- IMPORTANT: Adjust the link to your GitHub repo and file name! -->
+                <!-- Example: https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/krunkercheat2025.user.js -->
+                <a href="https://partypixelparty7.github.io/YOUR_REPO_NAME/krunkercheat2025.user.js" id="download-cheat-button" class="cta-button large">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="margin-right: 8px;">
                         <path d="M12 15.586l-4.293-4.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 00-1.414-1.414L12 15.586zM12 3a1 1 0 00-1 1v8.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L13 12.586V4a1 1 0 00-1-1z"/>
                     </svg>
                     Download Cheat (krunkercheat2025.user.js)
                 </a>
-                <p class="disclaimer">Hinweis: Die Verwendung von Cheats kann gegen die Nutzungsbedingungen von Krunker.io verstoßen und zu Account-Sperren führen. Benutzung auf eigene Gefahr.</p>
+                <p class="disclaimer">Note: Using cheats may violate Krunker.io's terms of service and can lead to account bans. Use at your own risk.</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Pixelcheat Krunker. Alle Rechte vorbehalten.</p>
-            <a href="https://partypixelparty7.github.io/All-my-Scripts/" target="_blank" rel="noopener noreferrer" class="button-footer">Homepage (Alle Skripte)</a>
+            <p>© 2024 Pixelcheat Krunker. All rights reserved.</p>
+            <a href="https://partypixelparty7.github.io/All-my-Scripts/" target="_blank" rel="noopener noreferrer" class="button-footer">Homepage (All Scripts)</a>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Smooth scrolling für interne Links
+            // Smooth scrolling for internal links
             const internalLinks = document.querySelectorAll('a[href^="#"]');
             internalLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
@@ -523,7 +534,7 @@
                 });
             });
 
-            // Scroll-Animationen für Elemente
+            // Scroll animations for elements
             const scrollElements = document.querySelectorAll('.step, .feature-item');
 
             const elementInView = (el, percentageScroll = 100) => {
@@ -547,24 +558,24 @@
             };
 
             window.addEventListener('scroll', handleScrollAnimation);
-            handleScrollAnimation(); // Initialer Check
+            handleScrollAnimation(); // Initial check
 
-            // --- Schneefall-Effekt ---
+            // --- Snowfall Effect ---
             const snowfallContainer = document.querySelector('.snowfall-container');
-            const numberOfSnowflakes = 50;
+            const numberOfSnowflakes = 70; // Increased for more visibility
 
             function createSnowflake() {
                 const snowflake = document.createElement('div');
                 snowflake.classList.add('snowflake');
 
-                const size = Math.random() * 4 + 2;
+                const size = Math.random() * 5 + 2.5; // Size: 2.5px to 7.5px (slightly larger)
                 snowflake.style.width = `${size}px`;
                 snowflake.style.height = `${size}px`;
                 snowflake.style.left = `${Math.random() * 100}vw`;
 
-                const animationDuration = Math.random() * 10 + 10;
+                const animationDuration = Math.random() * 8 + 8; // Duration: 8s to 16s (slightly faster overall)
                 const animationDelay = Math.random() * 10;
-                const driftX = (Math.random() - 0.5) * 30;
+                const driftX = (Math.random() - 0.5) * 40; // Drift -20vw to +20vw
                 const driftRotate = (Math.random() - 0.5) * 720;
 
                 snowflake.style.setProperty('--drift-x', `${driftX}vw`);
@@ -583,7 +594,7 @@
                 }
             }
 
-            // Klick-Effekt für Buttons
+            // Click effect for buttons
             const buttons = document.querySelectorAll('.cta-button, .button-secondary, .button-footer');
             buttons.forEach(button => {
                 button.addEventListener('mousedown', function() {
